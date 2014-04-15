@@ -1,34 +1,34 @@
 function updateField(){
  
-	var code = '<script src="http://www.yvoschaap.com/ytpage/ytembed.js" type="text/javascript"></script>';
-	code += "\n";
-	//code += '<di'+ nada +'v id="ytPlayer"></div>\n';
-	code += '<div id="ytThumbs"></div>';
-	code += "\n";
+	var html = '<script src="http://www.yvoschaap.com/ytpage/ytembed.js" type="text/javascript"></script>';
+	html += "\n";
+	//html += '<di'+ nada +'v id="ytPlayer"></div>\n';
+	html += '<div id="ytThumbs"></div>';
+	html += "\n";
 		
 	var string = '\'block\':\'ytThumbs\',';
  
-	var codeQ = document.getElementById('codeQ').value;
-	string += '\'q\':\''+codeQ+'\',';	
-	var codeType = 'search';
-	string += '\'type\':\''+codeType+'\',';
-	var codeResults = 15;
-	string += '\'results\':'+codeResults+',';
-	var codeOrder = 'most_relevance'
-	string += '\'order\':\''+codeOrder+'\',';
-	var codePlayer = 'embed'
-	string += '\'player\':\''+codePlayer+'\',';
-	var codeLayout = 'full'
-	string += '\'layout\':\''+codeLayout+'\'';
-	code += "\n";
-	code += '<script type="text/javascript">';
-	code += "\n";
-	code += '	ytEmbed.init({'+string+'});';
-	code += "\n";
-	code += '</script>';
+	var keyword = document.getElementById('keyword').value;
+	string += '\'q\':\''+keyword+'\',';	
+	var htmlType = 'search';
+	string += '\'type\':\''+htmlType+'\',';
+	var htmlResults = 15;
+	string += '\'results\':'+htmlResults+',';
+	var htmlOrder = 'most_relevance'
+	string += '\'order\':\''+htmlOrder+'\',';
+	var htmlPlayer = 'embed'
+	string += '\'player\':\''+htmlPlayer+'\',';
+	var htmlLayout = 'full'
+	string += '\'layout\':\''+htmlLayout+'\'';
+	html += "\n";
+	html += '<script type="text/javascript">';
+	html += "\n";
+	html += '	ytEmbed.init({'+string+'});';
+	html += "\n";
+	html += '</script>';
 	
-	document.getElementById('codeResult').value = code;
+	document.getElementById('htmlResult').value = html;
 	
-	var execute = {'q':codeQ,'type':codeType,'results':codeResults,'block':'youtubeDivResults','order':codeOrder,'player':codePlayer,'layout':codeLayout};
+	var execute = {'q': keyword,'type': htmlType,'results': htmlResults,'block':'youtubeDivResults','order':htmlOrder,'player': htmlPlayer,'layout': htmlLayout};
 	ytEmbed.init(execute);
 }

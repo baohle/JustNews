@@ -12,7 +12,7 @@ function updateField(){
 	string += '\'q\':\''+keyword+'\',';	
 	var htmlType = 'search';
 	string += '\'type\':\''+htmlType+'\',';
-	var htmlResults = 15;
+	var htmlResults = 20;
 	string += '\'results\':'+htmlResults+',';
 	var htmlOrder = 'most_relevance'
 	string += '\'order\':\''+htmlOrder+'\',';
@@ -30,5 +30,7 @@ function updateField(){
 	document.getElementById('htmlResult').value = html;
 	
 	var execute = {'q': keyword,'type': htmlType,'results': htmlResults,'block':'youtubeDivResults','order':htmlOrder,'player': htmlPlayer,'layout': htmlLayout};
+	alert("q = " + execute.q + ",type = " + execute.type + ",results = " + execute.results + ",block = " + execute.block + ",order = " + execute.order + ",player = " + execute.player + ",layout = " + execute.layout);
+	alert(execute.start);
 	ytEmbed.init(execute);
 }
